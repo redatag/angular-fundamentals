@@ -22,4 +22,8 @@ export class EventsListComponent{
     //[eventData]  attribute corresponds to (or match tne name of)  our input property in child com @Input() eventData: any
     //[eventData]="firstEvent" mean that this component has an input parameter and we want to pass the value of "FirstEvent" from its parent component 
 
+
+    handleEventClicked(data:any){
+        console.log('Recived data is: ' + data);
+    }
 }
