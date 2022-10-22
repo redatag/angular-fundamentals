@@ -31,5 +31,9 @@ export class EventThumbnailComponent implements OnInit {
     // console.log('Clicked');
   }
 
+  logFoo(){
+    console.log('Foo');
+    
+  }
   
 }

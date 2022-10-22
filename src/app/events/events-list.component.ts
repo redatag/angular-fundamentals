@@ -26,4 +26,8 @@ export class EventsListComponent{
     handleEventClicked(data:any){
         console.log('Recived data is: ' + data);
     }
+
+    //template reference varaible  => access public members (properties and methods) of child comp
+    //used to call methods or bind data in child comp
+    //specify avariable name points to  a component and then y can access any public member using that variable 
 }

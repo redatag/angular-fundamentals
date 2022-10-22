@@ -1,3 +1,8 @@
 <h2>Events List </h2>
-   <app-event-thumbnail (eventClick)="handleEventClicked($event)" [eventData]="firstEvent"></app-event-thumbnail>
-  
+   <app-event-thumbnail #thumbnail (eventClick)="handleEventClicked($event)" [eventData]="firstEvent"></app-event-thumbnail>
+  <button (click)="thumbnail.logFoo()"> Log some foo </button>
+   <!-- #thumbnail
+   this varibl avaible any where in outr template
+   we create a bublic method in child comp
+   
+   -->
