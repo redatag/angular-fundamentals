@@ -30,7 +30,7 @@ export class EventThumbnailComponent implements OnInit {
 // you can pass only  single value with event emitter , if y need to sentd n=multiple value y can wrap them in object
     // console.log('Clicked');
   }
-
+someData:string = 'child prorty accessed by parent';
   logFoo(){
     console.log('Foo');
     
