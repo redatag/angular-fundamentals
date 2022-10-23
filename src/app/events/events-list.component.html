@@ -1,7 +1,8 @@
 <h2>Events List </h2>
-   <app-event-thumbnail #thumbnail (eventClick)="handleEventClicked($event)" [eventData]="firstEvent"></app-event-thumbnail>
-   <h3>{{thumbnail.someData}}</h3>
-  <button (click)="thumbnail.logFoo()"> Log some foo </button>
+   <app-event-thumbnail  *ngFor="let event of events" 
+   (eventClick)="handleEventClicked($event)" [eventData]="event"></app-event-thumbnail>
+   <!-- <h3>{{thumbnail.someData}}</h3> -->
+  <!-- <button (click)="thumbnail.logFoo()"> Log some foo </button> -->
    <!-- #thumbnail
    this varibl avaible any where in outr template
    we create a bublic method in child comp
@@ -10,3 +11,6 @@
    output properties
    template variables the easiest way
    -->
+
+
+   
