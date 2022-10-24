@@ -3,17 +3,37 @@
 <div style="margin-top:30px">
     Event: {{eventData.name}} 
   </div>
-  <div>
+  <div [ngClass]="{green: eventData?.date === '9/26/2036', bold: eventData?.date === '2/10/2037'}">
     Date: {{eventData.date}}
   </div>
-  <div>
+  <div [class.green]="eventData?.time === '8:00 am'" [ngSwitch]="eventData?.time">
       Time: {{eventData.time}}
+      <span *ngSwitchCase="'8:00 am'">(Early Start)</span>
+      <span *ngSwitchCase="'10:00 am'">(Late Start)</span>
+      <span *ngSwitchDefault>(Normal Start)</span>
     </div>
-    <div>
+     
+    <div [hidden]="eventData?.price">
       Price: ${{eventData.price}}
     </div>
-  <div>
+  <div *ngIf="eventData?.location">
     Address: {{eventData.location.address}}, {{eventData.location.city}}, {{eventData.location.country}}
   </div>
 
 <button (click)="handleClickMe()">Click me</button>
+
+<!--
+   *ngIf="eventData?.location"
+   remove the dom elemnt by comment it to improve performance and no re generate it again
+
+   if want to show or hide frequently use hidden for better performance add hidden attribute to element
+   angular can bind dom properties like hidden
+   لو الاخفاء والاظهر متكرر الافضل اننا نستخدم ال hiden proerty of html  
+
+   stling
+   [class.greed]
+   بتعرف اسم الكلاس grrn in style file 
+لو عاوز تضيف كلاس تانى هنستخدم [ngClass] expression  return object  has 2 proerties one for each class we want to apply
+
+the objects key are the name of classes  want to add to the element and values are boolean expression
+-->
